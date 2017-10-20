@@ -99,9 +99,9 @@ def getResults(liste):
          
         
         #TEL
-        tel=re.findall("#^0[0-9]([ .-]?[0-9]{2}){4}$#",soup)
+        tel=re.findall("((\+\d+(\s|-))?0\d(\s|-)?(\d{2}(\s|-)?){4})",soup)
         if len(tel)!=0:
-            cars["Téléphone"][i]=tel[0]
+            cars["Téléphone"][i]=tel[0][0].replace('\n','')
         else:
             cars["Téléphone"][i]=None
         
